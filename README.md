@@ -45,3 +45,17 @@ IE. We do not assign, we define.
        2. Two Advantages:
           1. Original data will remain in tact. Which makes bugs much easier to find.
           2. Programs constructed in this way are much easier to keep track of since you can focus on any given piece individually.
+
+    5. Use const instead of let and var
+
+# Seperation of Data and Functions
+
+    Data
+        1. Any value that a program contains
+        2. Represented by simple arrays, hashes, and JS Objects
+
+    Functions
+        1. Any operation we can apply to data to convert it into useful information.
+        2. Completely seperate entities from the data that they operate on
+        3. Data must be passed as arguments into the function instead of using the "this" keyword.
+        4. Because of immutability, they should never make changes to any of the data that they touch, rather, they return a copy of the data they touch.
