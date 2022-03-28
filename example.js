@@ -1,24 +1,44 @@
-// define a function that returns a function that prints something to the console.
+// Closure
+const createPrinter = () => {
+  const myFavNum = 42;
 
-// remember that this is a shorthand way of writing a much longer version.
-const createPrinter = () => () => console.log('Hello');
+  return () => console.log(`My favorite number is ${myFavNum}`);
+};
 
-// long version
-const elongatedCreatePrinter = function () {
-  return function () {
-    console.log('Hello');
+const printer = createPrinter();
+printer();
+
+// we have access to the constant inside of the createPrinter function..
+// IE access to the scope the constant was returned from
+
+// implement real private variables in Javascript
+// object destructuring
+const Person = ({ name, age, job }) => {
+  var _name = name;
+  var _age = age;
+  var _job = job;
+
+  // getter functions
+  return {
+    getName: () => _name,
+    getAge: () => _age,
+    getJob: () => _job,
+
+    setJob: (newJob) => (_job = newJob),
   };
 };
 
-// refactor and increase code reuse...
-// const double = (x) => x * 2;
-// const triple = (x) => x * 3;
-// const quadruple = (x) => x * 4;
+const me = Person({ name: 'Matthew', age: '34', job: 'Developer' });
 
-// function to create variations.. IE - First Class Function
-const createMultiplier = (y) => (x) => x * y;
+me.getName();
+me.getAge();
+me.getJob();
 
-// reusable best practice...
-const double = createMultiplier(2);
-const triple = createMultiplier(3);
-const quadruple = createMultiplier(4);
+console.log(me.getName());
+console.log(me.getAge());
+console.log(me.getJob());
+
+me._name; // -> undefined..
+
+me.setJob('Mid-Level Developer');
+console.log(me.getJob());

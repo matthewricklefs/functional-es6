@@ -86,4 +86,10 @@ IE. We do not assign, we define.
         Gives us flexibility and greatly increases our ability for code reuse.
         It also allows us to do useful things like combine existing functions to create new functions.
 
-# First-Class Functions continued..
+# Closure
+
+    When we define a function that returns another function, the function that we return still has access to the internal scope of the function that returned it.
+
+# Private Variables
+
+    Usually an _ character. This signifies to ourselves and other developers that we should never directly use this variable outside of the class.
