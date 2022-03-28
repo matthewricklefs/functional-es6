@@ -59,3 +59,29 @@ IE. We do not assign, we define.
         2. Completely seperate entities from the data that they operate on
         3. Data must be passed as arguments into the function instead of using the "this" keyword.
         4. Because of immutability, they should never make changes to any of the data that they touch, rather, they return a copy of the data they touch.
+
+    Data remains a constant source of truth. If we want to transform that data in some way, we simply define a new constant to represent that change.
+
+    Data in functions are kept seperate.
+    We usually represent data in constructs as array, hashes, or objects.
+
+    Outside of the classes we then define the functions for transforming the data.
+
+# First-Class Functions
+
+    Allows us to treat functions in a simarly way as we treat other values such as numbers, strings, and objects.
+
+    In OOP, Functions and Data are defined within the same class which usually tends to be tightly coupled.
+
+    In FP, we design our functions specifically so that they work in isolation.
+    All of the data that a functions needs to operate on is passed in through the arguments.
+
+    The only thing that would change the output of a function is a change in the arguments.
+
+    In other words, functions are not influenced by any kind of internal or external state.
+
+    These are called Pure Functions.
+
+    Why would we do something like this?
+        Gives us flexibility and greatly increases our ability for code reuse.
+        It also allows us to do useful things like combine existing functions to create new functions.
