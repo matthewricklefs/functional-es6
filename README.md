@@ -93,3 +93,12 @@ IE. We do not assign, we define.
 # Private Variables
 
     Usually an _ character. This signifies to ourselves and other developers that we should never directly use this variable outside of the class.
+
+# Higher Order Functions
+
+    Functions that either take other functions are arguments or return functions.
+    Can provide flexibility and reusability.
+
+    Single Responsibility Principle:
+        states that each piece of code should only have one responsibility.
+    IE. If describing what a given piece of code does requires you to name two or more things, it is a sign that you should refactor
