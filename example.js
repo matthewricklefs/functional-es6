@@ -1,19 +1,14 @@
-// First Class Functions
-const double = (x) => x * 2;
-const subtractOne = (x) => x - 1;
-const triple = (x) => x * 2;
-const add5 = (x) => x + 5;
+const add = (x, y) => x + y;
+const subtract = (x, y) => x - y;
 
-const myNumber = 42;
+add(2, 3);
+subtract(9, 3);
 
-const doubled = double(myNumber);
-const minusOne = subtractOne(doubled);
-// ...
+const combine2and3 = (func) => func(2, 3);
 
-const functionsArray = [double, subtractOne, triple, add5, Math.sqrt];
+combine2and3(add); // -> 2 + 3
+// anonymous function
+combine2and3((x, y) => x + y);
 
-var number = 42;
-
-functionsArray.forEach((func) => (number = func(number)));
-
-console.log(number);
+combine2and3(subtract); // -> 2 - 3
+combine2and3(Math.max); // -> 3
