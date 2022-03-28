@@ -1,26 +1,36 @@
-// this will throw an error
-const x = 5;
-x = 6;
+function myFunction(arg1, arg2) {
+  // function body
+}
 
-const numbers = [1, 2, 3, 4, 5];
-
-// bad
-numbers = ['hello'];
-
-// good
-numbers[0] = 100;
-
-numbers.reverse();
-
-const person = {
-  name: 'John Doe',
-  age: 34,
+const myOtherFunction = function (arg1, arg2) {
+  // function body
 };
 
-// bad
-person = { name: 'Bob' };
+// Arrow Functions
+const add = (x, y) => x + y;
 
-// good
-person.name = 'Bob';
+// ES6 shorthand
+const double = (number) => number * 2;
 
-// prevent mutation with ESLint rules
+// ES5
+const otherDouble = function (number) {
+  return number * 2;
+};
+
+const sayHello = () => console.log('hello');
+
+// implicit return
+const getPersonData = () => ({
+  name: 'John Doe',
+  age: 34,
+  job: 'programmer',
+});
+
+// 0 args
+const arrow1 = () => {};
+
+// 1 arg
+const arrow2 = (arg1) => {};
+
+// 2 arg
+const arrow3 = (arg1, arg2) => ({ name: 'hi', why: 'unsure' });
