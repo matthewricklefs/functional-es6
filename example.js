@@ -1,14 +1,24 @@
-const add = (x, y) => x + y;
-const subtract = (x, y) => x - y;
+// define a function that returns a function that prints something to the console.
 
-add(2, 3);
-subtract(9, 3);
+// remember that this is a shorthand way of writing a much longer version.
+const createPrinter = () => () => console.log('Hello');
 
-const combine2and3 = (func) => func(2, 3);
+// long version
+const elongatedCreatePrinter = function () {
+  return function () {
+    console.log('Hello');
+  };
+};
 
-combine2and3(add); // -> 2 + 3
-// anonymous function
-combine2and3((x, y) => x + y);
+// refactor and increase code reuse...
+// const double = (x) => x * 2;
+// const triple = (x) => x * 3;
+// const quadruple = (x) => x * 4;
 
-combine2and3(subtract); // -> 2 - 3
-combine2and3(Math.max); // -> 3
+// function to create variations.. IE - First Class Function
+const createMultiplier = (y) => (x) => x * y;
+
+// reusable best practice...
+const double = createMultiplier(2);
+const triple = createMultiplier(3);
+const quadruple = createMultiplier(4);

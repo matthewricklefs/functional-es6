@@ -85,3 +85,5 @@ IE. We do not assign, we define.
     Why would we do something like this?
         Gives us flexibility and greatly increases our ability for code reuse.
         It also allows us to do useful things like combine existing functions to create new functions.
+
+# First-Class Functions continued..
