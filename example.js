@@ -1,23 +1,19 @@
-const sayHello = (name) => console.log(`hello ${name}`);
+// First Class Functions
+const double = (x) => x * 2;
+const subtractOne = (x) => x - 1;
+const triple = (x) => x * 2;
+const add5 = (x) => x + 5;
 
-const sayHello2 = sayHello;
-sayHello2('Matty');
+const myNumber = 42;
 
-// Ternary operations
-const myFunc = true
-  ? () => console.log('First option..')
-  : () => console.log('Second option..');
+const doubled = double(myNumber);
+const minusOne = subtractOne(doubled);
+// ...
 
-const DEVELOPMENT = true;
+const functionsArray = [double, subtractOne, triple, add5, Math.sqrt];
 
-const fetchDataReal = () => {
-  // time-intensive operations here!
-};
+var number = 42;
 
-const fetchDataFake = () => ({
-  name: 'John',
-  age: 43,
-});
+functionsArray.forEach((func) => (number = func(number)));
 
-// used at runtime? ternary condition
-const fetchData = DEVELOPMENT ? fetchDataFake : fetchDataReal;
+console.log(number);
