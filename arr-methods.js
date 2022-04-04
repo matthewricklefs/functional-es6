@@ -44,3 +44,20 @@ const descending = (a, b) => {
 
 const sortDesc = mixedUpNumbers.slice().sort(descending);
 console.log(sortDesc);
+
+// Reduce
+// takes a func as an argument.. the form of the func in its simplest form takes two args
+// first arg represents current value (accumulator)
+// second arg represents the current element we are looking at
+// purpose is to tell reduce how to combine the current val of accumulator
+// and the current element
+// returns acc + element
+// remember the second argument of the reduce would be the element you are starting at
+const sum = numbers.reduce((acc, x) => {
+  console.log(`acc is ${acc}`);
+  console.log(`x is ${x}`);
+
+  return acc + x;
+}, 0);
+
+console.log(sum);
