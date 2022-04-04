@@ -53,11 +53,60 @@ console.log(sortDesc);
 // and the current element
 // returns acc + element
 // remember the second argument of the reduce would be the element you are starting at
-const sum = numbers.reduce((acc, x) => {
-  console.log(`acc is ${acc}`);
-  console.log(`x is ${x}`);
+// const sum = numbers.reduce((acc, x) => {
+//   console.log(`acc is ${acc}`);
+//   console.log(`x is ${x}`);
 
-  return acc + x;
-}, 0);
+//   return acc + x;
+// }, 0);
 
-console.log(sum);
+// console.log(sum);
+
+// Combing Funcs
+const employees = [
+  {
+    name: 'John',
+    age: 54,
+    jobTitle: 'developer',
+    salary: 70000,
+  },
+  {
+    name: 'Saravanan',
+    age: 32,
+    jobTitle: 'recruiter',
+    salary: 80000,
+  },
+  {
+    name: 'Fernando',
+    age: 23,
+    jobTitle: 'architect',
+    salary: 140000,
+  },
+  {
+    name: 'Lucy',
+    age: 25,
+    jobTitle: 'designer',
+    salary: 900000,
+  },
+];
+
+const developers = employees.filter(
+  (employee) => employee.jobTitle === 'developer'
+);
+console.log(developers);
+
+const developerSalaries = developers.map((developer) => developer.salary);
+const totalDevSalary = developerSalaries.reduce((acc, x) => acc + x, 0);
+const averageDevSalary = totalDevSalary / developerSalaries.length;
+
+console.log(averageDevSalary);
+
+const nonDevelopers = employees.filter(
+  (employee) => employee.jobTitle !== 'developer'
+);
+
+const nonDevSal = nonDevelopers.map((nonDev) => nonDev.salary);
+const totalNonDevSal = nonDevSal.reduce((acc, x) => acc + x, 0);
+const averageNonDevSalary = totalNonDevSal / nonDevSal.length;
+
+console.log(averageNonDevSalary);
