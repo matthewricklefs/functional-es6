@@ -110,3 +110,24 @@ const totalNonDevSal = nonDevSal.reduce((acc, x) => acc + x, 0);
 const averageNonDevSalary = totalNonDevSal / nonDevSal.length;
 
 console.log(averageNonDevSalary);
+
+// Map Func Challenge
+// const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const map = (arr, func) => {
+  const newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const result = func(arr[i]);
+    newArray.push(result);
+  }
+
+  return newArray;
+};
+
+console.log(map([1, 2, 3], (x) => x * 2));
+
+const newMap = (arr, func) => {
+  return arr.reduce((acc, x) => [...acc, func(x)], []);
+};
+
+console.log(newMap([1, 2, 3], (x) => x * 2));
