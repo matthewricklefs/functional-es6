@@ -21,15 +21,28 @@ d.next = e;
 // current variable starts at the A node..
 // try to write algos as present as possible
 // no premature checking of next node if not necessary
+// instead it is better to go to the next node and exit when at the NULL node;
 
-const printLinkedList = (head) => {
-  // configure starting pointer
-  let current = head;
+// const printLinkedList = (head) => {
+//   // configure starting pointer
+//   let current = head;
 
-  while (current !== null) {
-    console.log(current.val);
-    current = current.next;
-  }
+//   while (current !== null) {
+//     console.log(current.val);
+//     current = current.next;
+//   }
+// };
+
+// printLinkedList(a);
+
+// Recursive Approach
+const printRecursiveLinkedList = (head) => {
+  // eslint-disable-next-line no-useless-return
+  if (head === null) return;
+
+  console.log(head.val);
+
+  printRecursiveLinkedList(head.next);
 };
 
-printLinkedList(a);
+printRecursiveLinkedList(a);
