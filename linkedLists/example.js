@@ -23,17 +23,18 @@ d.next = e;
 // no premature checking of next node if not necessary
 // instead it is better to go to the next node and exit when at the NULL node;
 
-// const printLinkedList = (head) => {
-//   // configure starting pointer
-//   let current = head;
+// Iterative Approach
+const printLinkedList = (head) => {
+  // configure starting pointer
+  let current = head;
 
-//   while (current !== null) {
-//     console.log(current.val);
-//     current = current.next;
-//   }
-// };
+  while (current !== null) {
+    console.log(current.val);
+    current = current.next;
+  }
+};
 
-// printLinkedList(a);
+printLinkedList(a);
 
 // Recursive Approach
 const printRecursiveLinkedList = (head) => {
