@@ -19,34 +19,34 @@ d.next = e;
 e.next = f;
 
 // iterative solution
-// const removeNode = (head, targetVal) => {
-//   if (head.val === targetVal) return head.next;
+const removeNode = (head, targetVal) => {
+  if (head.val === targetVal) return head.next;
 
-//   let currentNode = head;
-//   let previousNode = null;
+  let currentNode = head;
+  let previousNode = null;
 
-//   while (currentNode !== null) {
-//     if (currentNode.val === targetVal) {
-//       previousNode.next = currentNode.next;
-//       break;
-//     }
+  while (currentNode !== null) {
+    if (currentNode.val === targetVal) {
+      previousNode.next = currentNode.next;
+      break;
+    }
 
-//     previousNode = currentNode;
-//     currentNode = currentNode.next;
-//   }
+    previousNode = currentNode;
+    currentNode = currentNode.next;
+  }
 
-//   return head;
-// };
+  return head;
+};
 
 // console.log(removeNode(a, 'c'));
 
 // rercursive solution
-const removeNode = (head, targetVal) => {
-  if (head === null) return null;
-  if (head.val === targetVal) return head.next;
+// const removeNode = (head, targetVal) => {
+//   if (head === null) return null;
+//   if (head.val === targetVal) return head.next;
 
-  head.next = removeNode(head.next, targetVal);
-  return head;
-};
+//   head.next = removeNode(head.next, targetVal);
+//   return head;
+// };
 
 console.log(removeNode(a, 'c'));
